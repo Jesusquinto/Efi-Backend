@@ -1,0 +1,33 @@
+package com.apirest.efi.models.services;
+
+import java.util.List;
+
+import com.apirest.efi.models.dao.IndicadorGrupoDao;
+import com.apirest.efi.models.entity.IndicadorGrupo;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class IndicadorGrupoService {
+
+      @Autowired
+    private IndicadorGrupoDao indicadorGrupoDao;
+    
+    public List<IndicadorGrupo> findAll() {
+        return indicadorGrupoDao.findAll();
+    }
+
+    public List<IndicadorGrupo> findByEstado(Integer estado) {
+        return indicadorGrupoDao.findByEstado(estado);
+    }
+
+    public IndicadorGrupo findById(Integer id) {
+        return indicadorGrupoDao.findById(id).orElse(null);
+    }
+
+    public IndicadorGrupo save(IndicadorGrupo indicadorGrupo) {
+        return indicadorGrupoDao.save(indicadorGrupo);
+    }
+
+}
