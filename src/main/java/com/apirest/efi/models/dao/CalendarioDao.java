@@ -10,7 +10,7 @@ import org.springframework.data.jpa.repository.Query;
 public interface CalendarioDao extends JpaRepository<Calendario, Integer> {
 
     
-    @Query(value="Select distinct periodo from calendario WHERE activo = 1",nativeQuery = true)
+    @Query(value="Select distinct periodo from calendario WHERE activo = 1 ",nativeQuery = true)
     List<String> findAnnos();
     
     

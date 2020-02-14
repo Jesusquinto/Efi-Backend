@@ -11,5 +11,8 @@ public abstract class UsuariosRolesPK_ {
 	public static volatile SingularAttribute<UsuariosRolesPK, Long> rolesId;
 	public static volatile SingularAttribute<UsuariosRolesPK, Long> usuarioId;
 
+	public static final String ROLES_ID = "rolesId";
+	public static final String USUARIO_ID = "usuarioId";
+
 }
 

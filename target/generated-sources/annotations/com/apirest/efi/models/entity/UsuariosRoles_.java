@@ -10,5 +10,7 @@ public abstract class UsuariosRoles_ {
 
 	public static volatile SingularAttribute<UsuariosRoles, UsuariosRolesPK> usuariosRolesPK;
 
+	public static final String USUARIOS_ROLES_PK = "usuariosRolesPK";
+
 }
 

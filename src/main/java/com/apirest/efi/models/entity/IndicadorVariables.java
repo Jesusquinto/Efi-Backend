@@ -14,26 +14,13 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import javax.xml.bind.annotation.XmlRootElement;
 
 
 @Entity
 @Table(name = "indicador_variables")
-@XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "IndicadorVariables.findAll", query = "SELECT i FROM IndicadorVariables i")
-    , @NamedQuery(name = "IndicadorVariables.findByTipo", query = "SELECT i FROM IndicadorVariables i where i.fkGrupo.idGrupo =  :idGrupo and i.fkGrupo.fkTipo.idTipoIndicador = :idTipo order by i.orden")
-    , @NamedQuery(name = "IndicadorVariables.findByIdVariable", query = "SELECT i FROM IndicadorVariables i WHERE i.idVariable = :idVariable")
-    , @NamedQuery(name = "IndicadorVariables.findByNombreVariable", query = "SELECT i FROM IndicadorVariables i WHERE i.nombreVariable = :nombreVariable")
-    , @NamedQuery(name = "IndicadorVariables.findByFkEmpresa", query = "SELECT i FROM IndicadorVariables i WHERE i.fkEmpresa = :fkEmpresa")
-    , @NamedQuery(name = "IndicadorVariables.findByEstado", query = "SELECT i FROM IndicadorVariables i WHERE i.estado = :estado")
-    , @NamedQuery(name = "IndicadorVariables.findByCodigoFut", query = "SELECT i FROM IndicadorVariables i WHERE i.codigoFut = :codigoFut")
-    , @NamedQuery(name = "IndicadorVariables.findByOrden", query = "SELECT i FROM IndicadorVariables i WHERE i.orden = :orden")})
 public class IndicadorVariables implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -62,6 +49,9 @@ public class IndicadorVariables implements Serializable {
     @JoinColumn(name = "fk_grupo", referencedColumnName = "id_grupo")
     @ManyToOne(optional = false)
     private IndicadorGrupo fkGrupo;
+    @Column (name = "css")
+    private String css;
+    
 
     public IndicadorVariables() {
     }
@@ -70,11 +60,12 @@ public class IndicadorVariables implements Serializable {
         this.idVariable = idVariable;
     }
 
-    public IndicadorVariables(Integer idVariable, String nombreVariable, int fkEmpresa, int estado) {
+    public IndicadorVariables(Integer idVariable, String nombreVariable, int fkEmpresa, int estado, String css) {
         this.idVariable = idVariable;
         this.nombreVariable = nombreVariable;
         this.fkEmpresa = fkEmpresa;
         this.estado = estado;
+        this.css = css;
     }
 
     public Integer getIdVariable() {
@@ -156,6 +147,20 @@ public class IndicadorVariables implements Serializable {
     @Override
     public String toString() {
         return "efidev.co.modelo.IndicadorVariables[ idVariable=" + idVariable + " ]";
+    }
+
+    /**
+     * @return the css
+     */
+    public String getCss() {
+        return css;
+    }
+
+    /**
+     * @param css the css to set
+     */
+    public void setCss(String css) {
+        this.css = css;
     }
     
 }

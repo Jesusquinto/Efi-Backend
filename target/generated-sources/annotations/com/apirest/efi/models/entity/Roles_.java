@@ -11,5 +11,8 @@ public abstract class Roles_ {
 	public static volatile SingularAttribute<Roles, Long> id;
 	public static volatile SingularAttribute<Roles, String> nombre;
 
+	public static final String ID = "id";
+	public static final String NOMBRE = "nombre";
+
 }
 

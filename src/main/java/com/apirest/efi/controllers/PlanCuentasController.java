@@ -67,4 +67,30 @@ public class PlanCuentasController {
     }
     return planCuentasUpdate;
   }
+
+
+
+ @GetMapping("planCuentas/filter/{tipoPlan}/{tipo}/{entidad}")
+  public List<PlanCuentas> findByfilter(@PathVariable("tipoPlan") String tipoPlan,@PathVariable("tipo") String tipo,@PathVariable("entidad") String entidad) {
+    return planCuentasService.PlanCuentasFilter(tipoPlan, tipo, entidad);
+  }
+
+
+  @GetMapping("planCuentas/tiposCuentas")
+  public List<String> findTipoCuentas() {
+    return planCuentasService.findTiposPlan();
+  }
+
+  @GetMapping("planCuentas/tipos")
+  public List<String> findTipos() {
+    return planCuentasService.findTipos();
+  }
+
+  @GetMapping("planCuentas/entidades")
+  public List<String> findEntidades() {
+    return planCuentasService.findTiposEntidad();
+  }
+
+
+
 }

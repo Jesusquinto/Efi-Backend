@@ -23,5 +23,20 @@ public abstract class Empresa_ {
 	public static volatile SingularAttribute<Empresa, String> telefono;
 	public static volatile SingularAttribute<Empresa, Entidades> fkEntidad;
 
+	public static final String CONTACTO_NOMBRE = "contactoNombre";
+	public static final String ESTADO = "estado";
+	public static final String DIRECCION = "direccion";
+	public static final String NOMBRE = "nombre";
+	public static final String CONTACTO_TELEFONO = "contactoTelefono";
+	public static final String CONTACTO_EMAIL = "contactoEmail";
+	public static final String LICENCIA = "licencia";
+	public static final String CONTACTO_CARGO = "contactoCargo";
+	public static final String NIT = "nit";
+	public static final String LOGO = "logo";
+	public static final String ID = "id";
+	public static final String ORDEN = "orden";
+	public static final String TELEFONO = "telefono";
+	public static final String FK_ENTIDAD = "fkEntidad";
+
 }
 

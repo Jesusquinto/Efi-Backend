@@ -13,5 +13,10 @@ public abstract class Municipio_ {
 	public static volatile SingularAttribute<Municipio, String> nombreMunicipio;
 	public static volatile SingularAttribute<Municipio, Integer> idMunicipio;
 
+	public static final String FK_CATEGORIAS = "fkCategorias";
+	public static final String MUNICIPIO = "municipio";
+	public static final String NOMBRE_MUNICIPIO = "nombreMunicipio";
+	public static final String ID_MUNICIPIO = "idMunicipio";
+
 }
 

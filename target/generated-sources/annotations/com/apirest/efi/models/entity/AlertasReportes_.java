@@ -16,5 +16,13 @@ public abstract class AlertasReportes_ {
 	public static volatile SingularAttribute<AlertasReportes, Long> id;
 	public static volatile SingularAttribute<AlertasReportes, String> periodoAnno;
 
+	public static final String ESTADO = "estado";
+	public static final String CODIGO_CHIP = "codigoChip";
+	public static final String ULTIMO_REPORTE = "ultimoReporte";
+	public static final String CODIGO_CHIP_REPORTE = "codigoChipReporte";
+	public static final String PERIODO_MESES = "periodoMeses";
+	public static final String ID = "id";
+	public static final String PERIODO_ANNO = "periodoAnno";
+
 }
 

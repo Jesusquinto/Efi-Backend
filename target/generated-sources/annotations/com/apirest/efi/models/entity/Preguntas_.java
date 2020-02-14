@@ -19,5 +19,16 @@ public abstract class Preguntas_ {
 	public static volatile SingularAttribute<Preguntas, String> referencia;
 	public static volatile SingularAttribute<Preguntas, GruposPregunta> idGrupo;
 
+	public static final String DESCRIPCION = "descripcion";
+	public static final String CODIGO = "codigo";
+	public static final String ESTADO = "estado";
+	public static final String RESPONSABLE = "responsable";
+	public static final String PERIODO = "periodo";
+	public static final String ID_EMPRESA = "idEmpresa";
+	public static final String ID = "id";
+	public static final String ID_CATEGORIA = "idCategoria";
+	public static final String REFERENCIA = "referencia";
+	public static final String ID_GRUPO = "idGrupo";
+
 }
 

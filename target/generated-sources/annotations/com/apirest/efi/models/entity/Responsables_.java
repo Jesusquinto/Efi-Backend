@@ -21,5 +21,17 @@ public abstract class Responsables_ {
 	public static volatile SingularAttribute<Responsables, String> cargo;
 	public static volatile SingularAttribute<Responsables, String> nombre;
 
+	public static final String CONFIRMACION = "confirmacion";
+	public static final String RESULTADO_ENCUESTA = "resultadoEncuesta";
+	public static final String FECHA_CONFIRMACION = "fechaConfirmacion";
+	public static final String APELLIDO = "apellido";
+	public static final String CORREO = "correo";
+	public static final String IDENTIFICACION = "identificacion";
+	public static final String ID_EMPRESA = "idEmpresa";
+	public static final String ID = "id";
+	public static final String TELEFONO = "telefono";
+	public static final String CARGO = "cargo";
+	public static final String NOMBRE = "nombre";
+
 }
 

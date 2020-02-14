@@ -1,8 +1,8 @@
 spring:
   datasource:
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
-    password: Admin123
-    url: jdbc:sqlserver://salud.cflyqudqcoq8.us-east-2.rds.amazonaws.com:1433;databaseName=efi_dev
+    password: Admin12345
+    url: jdbc:sqlserver://efi-pro.cflyqudqcoq8.us-east-2.rds.amazonaws.com;database=efi-pro
     username: sa
     platform: mssql
   jackson:
@@ -36,6 +36,5 @@ spring:
     protocol: smtp
     test-connection: false
         
-
 server:
-    port : 5000
+    port : 80

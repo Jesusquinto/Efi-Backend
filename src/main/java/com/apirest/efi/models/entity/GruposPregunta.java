@@ -6,21 +6,15 @@
 package com.apirest.efi.models.entity;
 
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
-import org.codehaus.jackson.annotate.JsonIgnore;
+
+
 
 /**
  *
@@ -28,11 +22,6 @@ import org.codehaus.jackson.annotate.JsonIgnore;
  */
 @Entity
 @Table(name = "grupos_pregunta")
-@XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "GruposPregunta.findAll", query = "SELECT g FROM GruposPregunta g"),
-    @NamedQuery(name = "GruposPregunta.findById", query = "SELECT g FROM GruposPregunta g WHERE g.id = :id"),
-    @NamedQuery(name = "GruposPregunta.findByNombre", query = "SELECT g FROM GruposPregunta g WHERE g.nombre = :nombre")})
 public class GruposPregunta implements Serializable {
 
     private static final long serialVersionUID = 1L;

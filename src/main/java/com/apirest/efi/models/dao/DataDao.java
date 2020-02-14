@@ -26,7 +26,7 @@ public interface DataDao extends JpaRepository<DatosIndicadores, DatosIndicadore
     List<DatosIndicadores> findByMunicipio_grupo_indicador(@Param("municipio") String municipio, @Param("id_grupo") Integer id_grupo, @Param("tipo") Integer tipo );
     
     
-    @Query(value="Select distinct periodo from datos_indicadores order by 1 asc", nativeQuery = true)
+    @Query(value="Select distinct periodo from datos_indicadores order by 1 desc", nativeQuery = true)
     List<String> findPeriodos();
     
     

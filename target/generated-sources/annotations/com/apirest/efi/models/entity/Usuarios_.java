@@ -20,5 +20,16 @@ public abstract class Usuarios_ {
 	public static volatile SingularAttribute<Usuarios, Boolean> enabled;
 	public static volatile SingularAttribute<Usuarios, String> username;
 
+	public static final String PASSWORD = "password";
+	public static final String APELLIDO = "apellido";
+	public static final String ROLES = "roles";
+	public static final String DOCUMENTO = "documento";
+	public static final String ID_EMPRESA = "idEmpresa";
+	public static final String ID = "id";
+	public static final String NOMBRE = "nombre";
+	public static final String EMAIL = "email";
+	public static final String ENABLED = "enabled";
+	public static final String USERNAME = "username";
+
 }
 

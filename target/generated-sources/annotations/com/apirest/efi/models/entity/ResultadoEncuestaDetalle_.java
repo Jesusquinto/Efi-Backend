@@ -19,5 +19,15 @@ public abstract class ResultadoEncuestaDetalle_ {
 	public static volatile SingularAttribute<ResultadoEncuestaDetalle, String> observacion;
 	public static volatile SingularAttribute<ResultadoEncuestaDetalle, Preguntas> idPregunta;
 
+	public static final String ID_RESULTADO_ENCUESTA = "idResultadoEncuesta";
+	public static final String ESTADO = "estado";
+	public static final String RESULTADO = "resultado";
+	public static final String SEGUIMIENTO = "seguimiento";
+	public static final String FECHA_SEGUIMIENTO = "fechaSeguimiento";
+	public static final String ID_RESPONSABLE = "idResponsable";
+	public static final String ID = "id";
+	public static final String OBSERVACION = "observacion";
+	public static final String ID_PREGUNTA = "idPregunta";
+
 }
 

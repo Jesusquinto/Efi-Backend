@@ -10,18 +10,33 @@ import com.apirest.efi.models.dao.PlanCuentasDao;
 public class PlanCuentasService {
 
     @Autowired
-    private PlanCuentasDao PlanCuentasDao;
+    private PlanCuentasDao planCuentasDao;
     
     public List<PlanCuentas> findAll(){
-        return PlanCuentasDao.findAll();
+        return planCuentasDao.findAll();
     }
 
     public PlanCuentas findById(Integer id){
-        return PlanCuentasDao.findById(id).orElse(null);
+        return planCuentasDao.findById(id).orElse(null);
     }
 
     public PlanCuentas save(PlanCuentas planCuentas){
-        return PlanCuentasDao.save(planCuentas);
+        return planCuentasDao.save(planCuentas);
     }
 
+    public List<PlanCuentas> PlanCuentasFilter(String tipoPlan, String tipo, String entidad){
+        return planCuentasDao.findByFilters(tipoPlan, tipo, entidad);
+    }
+
+    public List<String> findTiposPlan(){
+        return planCuentasDao.findTiposPlan();
+    }
+
+    public List<String> findTipos(){
+        return planCuentasDao.findTipos();
+    }
+
+    public List<String> findTiposEntidad(){
+        return planCuentasDao.findTiposEntidad();
+    }
 }

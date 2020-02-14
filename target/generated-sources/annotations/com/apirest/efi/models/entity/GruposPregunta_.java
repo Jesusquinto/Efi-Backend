@@ -11,5 +11,8 @@ public abstract class GruposPregunta_ {
 	public static volatile SingularAttribute<GruposPregunta, Long> id;
 	public static volatile SingularAttribute<GruposPregunta, String> nombre;
 
+	public static final String ID = "id";
+	public static final String NOMBRE = "nombre";
+
 }
 

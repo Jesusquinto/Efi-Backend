@@ -12,5 +12,9 @@ public abstract class DatosIndicadoresPK_ {
 	public static volatile SingularAttribute<DatosIndicadoresPK, Integer> periodo;
 	public static volatile SingularAttribute<DatosIndicadoresPK, String> municipio;
 
+	public static final String TIPO = "tipo";
+	public static final String PERIODO = "periodo";
+	public static final String MUNICIPIO = "municipio";
+
 }
 

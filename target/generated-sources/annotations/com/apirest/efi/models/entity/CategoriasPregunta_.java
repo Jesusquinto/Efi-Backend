@@ -11,5 +11,8 @@ public abstract class CategoriasPregunta_ {
 	public static volatile SingularAttribute<CategoriasPregunta, Long> id;
 	public static volatile SingularAttribute<CategoriasPregunta, String> nombre;
 
+	public static final String ID = "id";
+	public static final String NOMBRE = "nombre";
+
 }
 

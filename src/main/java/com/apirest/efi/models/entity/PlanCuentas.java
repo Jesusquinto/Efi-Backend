@@ -1,27 +1,45 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.apirest.efi.models.entity;
 
 import java.io.Serializable;
-
+import java.util.List;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+import org.codehaus.jackson.annotate.JsonIgnore;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-
-@NoArgsConstructor
-@AllArgsConstructor
-@Setter
-@Getter
+/**
+ *
+ * @author jesus
+ */
 @Entity
 @Table(name = "plan_cuentas")
+@XmlRootElement
+@NamedQueries({
+    @NamedQuery(name = "PlanCuentas.findAll", query = "SELECT p FROM PlanCuentas p"),
+    @NamedQuery(name = "PlanCuentas.findByIdCuenta", query = "SELECT p FROM PlanCuentas p WHERE p.idCuenta = :idCuenta"),
+    @NamedQuery(name = "PlanCuentas.findByTipoPlan", query = "SELECT p FROM PlanCuentas p WHERE p.tipoPlan = :tipoPlan"),
+    @NamedQuery(name = "PlanCuentas.findByOrden", query = "SELECT p FROM PlanCuentas p WHERE p.orden = :orden"),
+    @NamedQuery(name = "PlanCuentas.findByCodigo", query = "SELECT p FROM PlanCuentas p WHERE p.codigo = :codigo"),
+    @NamedQuery(name = "PlanCuentas.findByDescripcion", query = "SELECT p FROM PlanCuentas p WHERE p.descripcion = :descripcion"),
+    @NamedQuery(name = "PlanCuentas.findByTipo", query = "SELECT p FROM PlanCuentas p WHERE p.tipo = :tipo"),
+    @NamedQuery(name = "PlanCuentas.findByNivel", query = "SELECT p FROM PlanCuentas p WHERE p.nivel = :nivel"),
+    @NamedQuery(name = "PlanCuentas.findByEntidad", query = "SELECT p FROM PlanCuentas p WHERE p.entidad = :entidad"),
+    @NamedQuery(name = "PlanCuentas.findByEstado", query = "SELECT p FROM PlanCuentas p WHERE p.estado = :estado")})
 public class PlanCuentas implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -62,13 +80,118 @@ public class PlanCuentas implements Serializable {
     private Integer estado;
 
 
+    public PlanCuentas() {
+    }
 
     public PlanCuentas(Integer idCuenta) {
         this.idCuenta = idCuenta;
     }
 
+    public PlanCuentas(Integer idCuenta, String tipoPlan, int orden, String codigo, String descripcion) {
+        this.idCuenta = idCuenta;
+        this.tipoPlan = tipoPlan;
+        this.orden = orden;
+        this.codigo = codigo;
+        this.descripcion = descripcion;
+    }
+
+    public Integer getIdCuenta() {
+        return idCuenta;
+    }
+
+    public void setIdCuenta(Integer idCuenta) {
+        this.idCuenta = idCuenta;
+    }
+
+    public String getTipoPlan() {
+        return tipoPlan;
+    }
+
+    public void setTipoPlan(String tipoPlan) {
+        this.tipoPlan = tipoPlan;
+    }
+
+    public int getOrden() {
+        return orden;
+    }
+
+    public void setOrden(int orden) {
+        this.orden = orden;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(String nivel) {
+        this.nivel = nivel;
+    }
+
+    public String getEntidad() {
+        return entidad;
+    }
+
+    public void setEntidad(String entidad) {
+        this.entidad = entidad;
+    }
+
+    public Integer getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Integer estado) {
+        this.estado = estado;
+    }
 
 
-   
+
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (idCuenta != null ? idCuenta.hashCode() : 0);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof PlanCuentas)) {
+            return false;
+        }
+        PlanCuentas other = (PlanCuentas) object;
+        if ((this.idCuenta == null && other.idCuenta != null) || (this.idCuenta != null && !this.idCuenta.equals(other.idCuenta))) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "com.apirest.efi.models.entity.PlanCuentas[ idCuenta=" + idCuenta + " ]";
+    }
     
 }

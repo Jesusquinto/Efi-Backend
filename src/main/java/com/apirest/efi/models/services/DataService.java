@@ -79,7 +79,7 @@ public class DataService {
     }
     
     public List<IndicadorVariables> listarIndicadoresByGrupoAndTipo(Integer id_grupo, Integer id_tipo){
-        return indicadorVariablesRepository.findVariablesByGrupoAndTipo(id_grupo, id_grupo);
+        return indicadorVariablesRepository.findVariablesByGrupoAndTipo(id_grupo, id_tipo);
     }
     
     //Datos
@@ -105,6 +105,11 @@ public class DataService {
 
     public AlertasDatos findAlertasDatos(String codigo_chip, String anno, String mes){
         return alertasDatosDao.findAlertasByEntidadAnnoMes(codigo_chip, anno, mes);
+    }
+    
+    
+    public List<Object> getAlertasDatos(Long id, String periodo, String anno){
+        return alertasDatosDao.getDatosAlertas(id,periodo,anno);
     }
     
   

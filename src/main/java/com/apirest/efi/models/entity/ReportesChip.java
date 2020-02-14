@@ -6,32 +6,37 @@
 package com.apirest.efi.models.entity;
 
 import java.io.Serializable;
+import java.util.List;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+import org.codehaus.jackson.annotate.JsonIgnore;
 
 /**
  *
- * @author RICARDO
+ * @author jesus
  */
 @Entity
 @Table(name = "reportes_chip")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "ReportesChip.findAll", query = "SELECT r FROM ReportesChip r")
-    , @NamedQuery(name = "ReportesChip.findByIdReporte", query = "SELECT r FROM ReportesChip r WHERE r.idReporte = :idReporte")
-    , @NamedQuery(name = "ReportesChip.findByCodigoChipReporte", query = "SELECT r FROM ReportesChip r WHERE r.codigoChipReporte = :codigoChipReporte")
-    , @NamedQuery(name = "ReportesChip.findByNombre", query = "SELECT r FROM ReportesChip r WHERE r.nombre = :nombre")
-    , @NamedQuery(name = "ReportesChip.findByOrden", query = "SELECT r FROM ReportesChip r WHERE r.orden = :orden")
-    , @NamedQuery(name = "ReportesChip.findByEstado", query = "SELECT r FROM ReportesChip r WHERE r.estado = :estado")
-    , @NamedQuery(name = "ReportesChip.findByTipoReporte", query = "SELECT r FROM ReportesChip r WHERE r.tipoReporte = :tipoReporte")})
+    @NamedQuery(name = "ReportesChip.findAll", query = "SELECT r FROM ReportesChip r"),
+    @NamedQuery(name = "ReportesChip.findByIdReporte", query = "SELECT r FROM ReportesChip r WHERE r.idReporte = :idReporte"),
+    @NamedQuery(name = "ReportesChip.findByCodigoChipReporte", query = "SELECT r FROM ReportesChip r WHERE r.codigoChipReporte = :codigoChipReporte"),
+    @NamedQuery(name = "ReportesChip.findByNombre", query = "SELECT r FROM ReportesChip r WHERE r.nombre = :nombre"),
+    @NamedQuery(name = "ReportesChip.findByOrden", query = "SELECT r FROM ReportesChip r WHERE r.orden = :orden"),
+    @NamedQuery(name = "ReportesChip.findByEstado", query = "SELECT r FROM ReportesChip r WHERE r.estado = :estado"),
+    @NamedQuery(name = "ReportesChip.findByTipoReporte", query = "SELECT r FROM ReportesChip r WHERE r.tipoReporte = :tipoReporte")})
 public class ReportesChip implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -61,6 +66,10 @@ public class ReportesChip implements Serializable {
     @Size(max = 10)
     @Column(name = "tipo_reporte")
     private String tipoReporte;
+    @Column(name = "keys")
+    private String keys;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "idReporte")
+    private List<IndicadorCuentas> indicadorCuentasList;
 
     public ReportesChip() {
     }
@@ -125,6 +134,16 @@ public class ReportesChip implements Serializable {
         this.tipoReporte = tipoReporte;
     }
 
+    @XmlTransient
+    @JsonIgnore
+    public List<IndicadorCuentas> getIndicadorCuentasList() {
+        return indicadorCuentasList;
+    }
+
+    public void setIndicadorCuentasList(List<IndicadorCuentas> indicadorCuentasList) {
+        this.indicadorCuentasList = indicadorCuentasList;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -147,7 +166,21 @@ public class ReportesChip implements Serializable {
 
     @Override
     public String toString() {
-        return "efidev.co.modelo.ReportesChip[ idReporte=" + idReporte + " ]";
+        return "com.apirest.efi.models.entity.ReportesChip[ idReporte=" + idReporte + " ]";
+    }
+
+    /**
+     * @return the keys
+     */
+    public String getKeys() {
+        return keys;
+    }
+
+    /**
+     * @param keys the keys to set
+     */
+    public void setKeys(String keys) {
+        this.keys = keys;
     }
     
 }

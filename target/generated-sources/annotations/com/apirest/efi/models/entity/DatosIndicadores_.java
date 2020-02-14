@@ -21,5 +21,18 @@ public abstract class DatosIndicadores_ {
 	public static volatile SingularAttribute<DatosIndicadores, Double> valorAnterior;
 	public static volatile SingularAttribute<DatosIndicadores, String> nombredepartamento;
 
+	public static final String NOMBRE_TIPO = "nombreTipo";
+	public static final String PUESTO = "puesto";
+	public static final String CODIGO_DEPARTAMENTO = "codigoDepartamento";
+	public static final String FK_GRUPO = "fkGrupo";
+	public static final String PUESTO_ANTERIOR = "puestoAnterior";
+	public static final String DATOS_INDICADORES_PK = "datosIndicadoresPK";
+	public static final String NOMBRE_MUNICIPIO = "nombreMunicipio";
+	public static final String VALOR = "valor";
+	public static final String NACIONAL_ANTERIOR = "nacionalAnterior";
+	public static final String NACIONAL = "nacional";
+	public static final String VALOR_ANTERIOR = "valorAnterior";
+	public static final String NOMBREDEPARTAMENTO = "nombredepartamento";
+
 }
 

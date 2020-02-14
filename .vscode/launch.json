@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - EfiApplication",
+            "request": "launch",
+            "mainClass": "com.apirest.efi.EfiApplication",
+            "projectName": "efi"
+        }
+    ]
+}

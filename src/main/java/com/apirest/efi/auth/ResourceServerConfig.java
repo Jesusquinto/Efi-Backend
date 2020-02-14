@@ -22,7 +22,22 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
   @Override
   public void configure(HttpSecurity http) throws Exception {
     http.authorizeRequests()
-        .antMatchers(HttpMethod.GET, "/efi/confirmar/**", "efi/confirmar/usuarioefi/**"
+        .antMatchers(HttpMethod.GET, "/efi/confirmar/**", "efi/confirmar/usuarioefi/**", "/assets/**",  "/favicon.ico", "/",
+        "/**/*.png",
+        "/**/*.gif",
+        "/**/*.svg",
+        "/**/*.jpg",
+        "/**/*.html",
+        "/**/*.css",
+        "/**/*.js",
+        "/**/*.woff2",
+        "/**/*.woff",
+        "/**/*.ttf",
+        "/aplicar-encuesta", "/panel", "/user-alertas", "/user-indicadores", "/encuestas-realizadas", "/login",
+        "/dashboard", "/usuarios", "/calendario", "/categorias", "/indicadores-tipo", "/indicadores-grupo", "/indicadores-variables", "/plan-cuenta", "/empresa", "/entidades", 
+        "/reportes", "/encuesta", "/grupo-preguntas", "/preguntas", "/categorias-preguntas", "/tendencias"
+
+        
         ).permitAll()
         .anyRequest().authenticated()
         .and().cors().configurationSource(corsConfigurationSource());

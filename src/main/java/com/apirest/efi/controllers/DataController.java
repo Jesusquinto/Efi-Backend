@@ -42,6 +42,9 @@ public class DataController {
 
 
 
+
+
+
   @GetMapping("tipos")
   public List<IndicadorTipo> findAll() {
     return dataService.listarTiposIndicador();
@@ -57,6 +60,14 @@ public class DataController {
       @PathVariable("idGrupo") Integer idGrupo) {
     return dataService.listarIndicadoresByGrupoAndTipo(idGrupo, idTipo);
   }
+  
+  
+     @GetMapping("calidadfut/{identidad}/{periodo}/{anno}")
+  public List<Object> getAl(@PathVariable("identidad") Long identidad, @PathVariable("periodo") String periodo, @PathVariable("anno") String anno ) {
+    return dataService.getAlertasDatos(identidad, periodo, anno);
+  }
+  
+  
 
   @GetMapping("list/departamentos")
   public List<Entidades> listarGruposByTipoIndicador() {

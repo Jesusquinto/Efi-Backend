@@ -18,5 +18,14 @@ public abstract class Categorias_ {
 	public static volatile SingularAttribute<Categorias, String> descripcionCategoria;
 	public static volatile SingularAttribute<Categorias, Long> idCategoria;
 
+	public static final String HABITANTES_INFERIOR = "habitantesInferior";
+	public static final String ESTADO = "estado";
+	public static final String HABITANTES_SUPERIOR = "habitantesSuperior";
+	public static final String LIMITE_GASTO = "limiteGasto";
+	public static final String CATEGORIA = "categoria";
+	public static final String INGRESOS_CORRIENTES = "ingresosCorrientes";
+	public static final String DESCRIPCION_CATEGORIA = "descripcionCategoria";
+	public static final String ID_CATEGORIA = "idCategoria";
+
 }
 

@@ -14,8 +14,11 @@ public interface EntidadesDao extends JpaRepository<Entidades, Long> {
         public List<Entidades> filterByEmpresa(@Param("idEntidad") Long idEntidad);
 
         
-          @Query("SELECT e from Entidades e  where e.tipo ='G' ORDER BY e.codigoDane")
-    List<Entidades> findDepartamentos();
+          @Query("SELECT e from Entidades e  where e.tipo ='G' and e.estado = 1  ORDER BY e.codigoDane")
+          List<Entidades> findDepartamentos();
+          
+          
+
     
     
     

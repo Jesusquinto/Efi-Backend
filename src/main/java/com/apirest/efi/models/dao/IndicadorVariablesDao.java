@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 public interface IndicadorVariablesDao extends JpaRepository<IndicadorVariables, Integer> {
-    @Query("SELECT i FROM IndicadorVariables i where i.fkGrupo.idGrupo =  :idGrupo and i.fkGrupo.fkTipo.idTipoIndicador = :idTipo and i.estado = 1 order by i.orden")
+    @Query("SELECT i FROM IndicadorVariables i where i.fkGrupo.idGrupo =  :idGrupo and i.fkGrupo.fkTipo.idTipoIndicador = :idTipo and i.estado = 1  order by i.orden")
     List<IndicadorVariables> findVariablesByGrupoAndTipo (@Param("idGrupo") Integer idGrupo,@Param("idTipo") Integer idTipo);
 
         @Query("SELECT i FROM IndicadorVariables i WHERE i.estado = :estado")

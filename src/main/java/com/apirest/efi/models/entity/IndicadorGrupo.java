@@ -14,24 +14,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import javax.xml.bind.annotation.XmlRootElement;
+
 
 
 @Entity
 @Table(name = "indicador_grupo")
-@XmlRootElement
-@NamedQueries({
-    @NamedQuery(name = "IndicadorGrupo.findAll", query = "SELECT i FROM IndicadorGrupo i")
-    , @NamedQuery(name = "IndicadorGrupo.findByIdGrupo", query = "SELECT i FROM IndicadorGrupo i WHERE i.idGrupo = :idGrupo")
-    , @NamedQuery(name = "IndicadorGrupo.findByNombreGrupo", query = "SELECT i FROM IndicadorGrupo i WHERE i.nombreGrupo = :nombreGrupo")
-    , @NamedQuery(name = "IndicadorGrupo.findByFkEmpresa", query = "SELECT i FROM IndicadorGrupo i WHERE i.fkEmpresa = :fkEmpresa")
-    , @NamedQuery(name = "IndicadorGrupo.findByEstado", query = "SELECT i FROM IndicadorGrupo i WHERE i.estado = :estado")
-    , @NamedQuery(name = "IndicadorGrupo.findByEstilo", query = "SELECT i FROM IndicadorGrupo i WHERE i.estilo = :estilo")})
 public class IndicadorGrupo implements Serializable {
 
     private static final long serialVersionUID = 1L;
